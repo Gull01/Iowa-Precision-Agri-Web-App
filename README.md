@@ -1,8 +1,8 @@
-# 🌾 Iowa Precision Agriculture WebGIS
+# Iowa Precision Agriculture WebGIS
 
 AI-powered precision agriculture platform for Iowa with local datasets and intelligent insights.
 
-## ⚡ Quick Start
+## Quick Start
 
 **No API key setup needed - everything is pre-configured!**
 
@@ -24,41 +24,41 @@ python main.py
 # http://localhost:8000/static/index.html
 ```
 
-**That's it! The app is ready to use.** 🎉
+That is it. The app is ready to use.
 
 ---
 
-## 🎯 Features
+## Features
 
-✅ **7 Iowa Datasets** - CDL, NLCD, NDVI, Rainfall, Temperature, Soil Moisture, ET  
-✅ **AI-Powered Insights** - Click anywhere to get crop recommendations  
-✅ **Urban Detection** - Smart detection of non-agricultural areas  
-✅ **Interactive Map** - Toggle layers, zoom, analyze  
-✅ **Export Reports** - Save AI insights as text files  
-✅ **No Internet Required** - All data stored locally (except AI calls)
-
----
-
-## 📖 Documentation
-
-- **📋 SETUP_INSTRUCTIONS.md** - Detailed setup guide for your team
-- **🔐 SECURITY_GUIDE.md** - Security and API key management
-- **🤖 AI_INSIGHTS_GUIDE.md** - How AI insights work
-- **🗺️ IOWA_LOCAL_DATA_GUIDE.md** - Dataset information
-- **⚡ QUICKSTART.md** - Quick reference
+- **7 Iowa datasets** - CDL, NLCD, NDVI, Rainfall, Temperature, Soil Moisture, ET  
+- **AI-powered insights** - Click anywhere to get crop recommendations  
+- **Urban detection** - Smart detection of non-agricultural areas  
+- **Interactive map** - Toggle layers, zoom, analyze  
+- **Export reports** - Save AI insights as text files  
+- **No internet required** - All data stored locally except AI calls
 
 ---
 
-## 🗺️ How to Use
+## Documentation
 
-1. **Toggle Layers** - Check/uncheck datasets in left sidebar
-2. **Click Map** - Click anywhere in Iowa to get AI analysis
-3. **Read Insights** - AI provides field status, recommendations, action items
-4. **Export Data** - Save insights for later reference
+- **SETUP_INSTRUCTIONS.md** - Detailed setup guide for your team
+- **SECURITY_GUIDE.md** - Security and API key management
+- **AI_INSIGHTS_GUIDE.md** - How AI insights work
+- **IOWA_LOCAL_DATA_GUIDE.md** - Dataset information
+- **QUICKSTART.md** - Quick reference
 
 ---
 
-## 🛠️ Technology Stack
+## How to Use
+
+1. **Toggle layers** - Check or uncheck datasets in the left sidebar
+2. **Click map** - Click anywhere in Iowa to get AI analysis
+3. **Read insights** - AI provides field status, recommendations, and action items
+4. **Export data** - Save insights for later reference
+
+---
+
+## Technology Stack
 
 - **Backend:** FastAPI + SQLAlchemy + GDAL
 - **Frontend:** Vanilla JavaScript + Leaflet Maps
@@ -67,7 +67,7 @@ python main.py
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 WEB/
@@ -83,9 +83,9 @@ WEB/
 
 ---
 
-## 🤝 For Your Teammate
+## For Your Teammate
 
-**Just share the entire WEB folder!**
+**Just share the entire WEB folder.**
 
 They don't need to:
 - ❌ Get their own API key
@@ -93,15 +93,15 @@ They don't need to:
 - ❌ Download datasets
 
 They just need to:
-1. ✅ Run the 5 commands above
-2. ✅ Open the browser
-3. ✅ Start using it!
+1. Run the five commands above
+2. Open the browser
+3. Start using it
 
-**See SETUP_INSTRUCTIONS.md for detailed guide.**
+See SETUP_INSTRUCTIONS.md for the detailed guide.
 
 ---
 
-## 🔧 Customization
+## Customization
 
 Want to add features? Check these files:
 
@@ -112,7 +112,7 @@ Want to add features? Check these files:
 
 ---
 
-## 📊 Datasets Included
+## Datasets Included
 
 1. Iowa CDL 2023 (Cropland Data Layer)
 2. Iowa NLCD 2021 (Land Cover)
@@ -124,7 +124,7 @@ Want to add features? Check these files:
 
 ---
 
-## ⚠️ Requirements
+## Requirements
 
 - Python 3.8+
 - 1GB disk space
@@ -132,7 +132,7 @@ Want to add features? Check these files:
 
 ---
 
-## 📞 Troubleshooting
+## Troubleshooting
 
 **Port already in use?**
 Change port in `main.py` (last line): `port=8001`
@@ -148,13 +148,13 @@ See SETUP_INSTRUCTIONS.md
 
 ---
 
-## 📝 License
+## License
 
 Educational/Research Project - Free to use and modify!
 
 ---
 
-**Ready to explore Iowa agriculture with AI? Run `python main.py` and go! 🚜🌾**
+Ready to explore Iowa agriculture with AI? Run `python main.py` and go.
 
 Copy `.env.example` to `.env` and configure your settings:
 

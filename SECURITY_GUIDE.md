@@ -73,7 +73,7 @@ SENTINEL_HUB_CLIENT_SECRET=
 **Before (❌ INSECURE):**
 ```python
 # config.py - API key hardcoded!
-gemini_api_key: str = "REMOVED_SECRET"
+gemini_api_key: str = "YOUR_API_KEY_HERE"
 ```
 
 **After (✅ SECURE):**
@@ -82,7 +82,7 @@ gemini_api_key: str = "REMOVED_SECRET"
 gemini_api_key: str = ""  # Will be populated from .env file
 
 # .env file (not in Git)
-GEMINI_API_KEY=REMOVED_SECRET
+GEMINI_API_KEY=YOUR_API_KEY_HERE
 ```
 
 ### Best Practices

@@ -213,7 +213,7 @@ python main.py
 **Solution:**
 Check `.env` file me API key hai ya nahi:
 ```
-GEMINI_API_KEY=REMOVED_SECRET
+GEMINI_API_KEY=YOUR_API_KEY_HERE
 ```
 
 ### Problem 7: GDAL installation error

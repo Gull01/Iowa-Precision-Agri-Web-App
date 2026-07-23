@@ -1,8 +1,8 @@
-# ✅ Quick Checklist - Before Sharing
+# Quick Checklist - Before Sharing
 
-## 📦 Files to Share (Ye sab hone chahiye)
+## Files to Share
 
-### Core Files:
+### Core Files
 - [ ] `main.py`
 - [ ] `local_data_api.py`
 - [ ] `gemini_ai.py`
@@ -11,12 +11,12 @@
 - [ ] `models.py`
 - [ ] `schemas.py`
 
-### Configuration:
+### Configuration
 - [ ] `requirements.txt` ← **MUST HAVE**
 - [ ] `.env` ← **MUST HAVE** (API key)
 - [ ] `.gitignore`
 
-### Data Folder:
+### Data Folder
 - [ ] `DATA/iowa_cdl_2023.tif`
 - [ ] `DATA/iowa_nlcd_2021.tif`
 - [ ] `DATA/iowa_ndvi_2023.tif`
@@ -25,7 +25,7 @@
 - [ ] `DATA/iowa_soil_moisture_2023.tif`
 - [ ] `DATA/iowa_et_2023.tif`
 
-### Static Files:
+### Static Files
 - [ ] `static/index.html`
 - [ ] `static/styles.css`
 - [ ] `static/app.js`
@@ -33,7 +33,7 @@
 - [ ] `static/ai-insights.js`
 - [ ] `static/ai-insights.css`
 
-### Documentation:
+### Documentation
 - [ ] `README.md`
 - [ ] `VSCODE_SETUP_GUIDE.md` ← **Give this to friend**
 - [ ] `SETUP_INSTRUCTIONS.md`
@@ -41,17 +41,14 @@
 
 ---
 
-## 🔍 Double Check These
+## Double Check These
 
 ### 1. Check `.env` file exists:
 ```powershell
 cat .env
 ```
 
-Should show:
-```
-GEMINI_API_KEY=REMOVED_SECRET
-```
+Should show a placeholder value or an empty field, not a real API key.
 
 ### 2. Check `requirements.txt` exists:
 ```powershell
@@ -76,7 +73,7 @@ Should show all HTML, JS, CSS files.
 
 ---
 
-## 📤 How to Share
+## How to Share
 
 ### Option 1: Zip the Folder
 ```powershell
@@ -98,35 +95,35 @@ Copy-Item -Path "E:\work_projects\N-IGIS-WORK\WEB" -Destination "F:\" -Recurse
 
 ---
 
-## 📧 What to Tell Your Friend
+## What to Tell Your Friend
 
 Send this message:
 
 ---
 
-**Hi! 👋**
+Hi,
 
-Maine tumhare liye complete Iowa Agriculture AI app setup ki hai.
+I prepared a complete Iowa Agriculture AI app setup.
 
 **Steps:**
 
-1. **Download/Copy** the WEB folder
-2. **Open** VS Code
-3. **Open** the WEB folder in VS Code
-4. **Follow** the `VSCODE_SETUP_GUIDE.md` file (Urdu/English me hai, samajhne me easy hoga)
+1. Download or copy the WEB folder
+2. Open VS Code
+3. Open the WEB folder in VS Code
+4. Follow the VSCODE_SETUP_GUIDE.md file
 
 **Important:**
-- API key already configured hai ✅
-- Data files included hain ✅
-- Bas 5 commands run karne hain ✅
+- Use your own API key in the local .env file
+- Data files are included
+- Run the setup commands listed above
 
-**Time:** Total 5-10 minutes (2-3 min install time)
+**Time:** Total 5-10 minutes, depending on install speed
 
-Questions ho toh message karo!
+Questions can be sent anytime.
 
 ---
 
-## 🎯 Final Verification (Your End)
+## Final Verification
 
 Before sharing, run these:
 
@@ -149,7 +146,7 @@ python main.py
 cat .env | Select-String "GEMINI"
 ```
 
-Should show the API key.
+Should show your local secret value, not a public example.
 
 ### Test 3: Check DATA folder
 ```powershell
@@ -160,14 +157,14 @@ Should show 7 .tif files.
 
 ---
 
-## ✅ Ready to Share When
+## Ready to Share When
 
-- [ ] Tested on your PC (works fine)
-- [ ] `.env` file present with API key
-- [ ] `requirements.txt` present
-- [ ] All 7 DATA files present
-- [ ] All static files present
-- [ ] VSCODE_SETUP_GUIDE.md present
-- [ ] Folder size ~500MB-1GB
+- Tested on your PC
+- `.env` file is present with your own secret values
+- `requirements.txt` is present
+- All 7 DATA files are present
+- All static files are present
+- VSCODE_SETUP_GUIDE.md is present
+- Folder size is about 500MB to 1GB
 
-**Agar sab ✅ hai, toh share kar do! 🚀**
+If everything above is ready, share it.
