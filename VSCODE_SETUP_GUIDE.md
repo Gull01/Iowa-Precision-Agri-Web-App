@@ -1,42 +1,42 @@
-# 🚀 VS Code Setup Guide (Urdu/English)
+# 👋 VS Code Setup Guide (Urdu/English)
 
-## ✅ Complete Step-by-Step Guide for Your Friend
+## 🎯 Complete Step-by-Step Guide for Your Friend
 
 ---
 
-## 📦 **Step 1: Aap (Office PC) - Folder Ready Karo**
+## 🚀 **Step 1: Aap (Office PC) - Folder Ready Karo**
 
 ### Files to Share:
 ```
 WEB/
-├── main.py
-├── local_data_api.py
-├── gemini_ai.py
-├── config.py
-├── database.py
-├── models.py
-├── schemas.py
-├── requirements.txt    ← Important!
-├── .env               ← Important! (API key hai isme)
-├── DATA/              ← All 7 GeoTIFF files
-└── static/
-    ├── index.html
-    ├── app.js
-    ├── iowa-local-layers.js
-    ├── ai-insights.js
-    ├── ai-insights.css
-    └── styles.css
+├─ main.py
+├─ local_data_api.py
+├─ gemini_ai.py
+├─ config.py
+├─ database.py
+├─ models.py
+├─ schemas.py
+├─ requirements.txt  ➜ Important!
+├─ .env              ➜ Important! (API key hain ismein)
+├─ DATA/             ➜ All 7 GeoTIFF files
+└─ static/
+    ├─ index.html
+    ├─ app.js
+    ├─ iowa-local-layers.js
+    ├─ ai-insights.js
+    ├─ ai-insights.css
+    └─ styles.css
 ```
 
 ### Double-Check These Files:
-✅ `.env` file exists (API key hai isme)  
+✅ `.env` file exists (API key hain ismein)  
 ✅ `requirements.txt` exists  
-✅ `DATA/` folder complete hai (7 GeoTIFF files)  
-✅ `static/` folder complete hai (all HTML/JS/CSS)
+✅ `DATA/` folder complete hain (7 GeoTIFF files)  
+✅ `static/` folder complete hain (all HTML/JS/CSS)
 
 ---
 
-## 📤 **Step 2: Share Karo**
+## 🚀 **Step 2: Share Karo**
 
 **Option A: USB Drive**
 - Copy entire `WEB` folder to USB
@@ -55,7 +55,7 @@ git push
 
 ---
 
-## 📥 **Step 3: Friend (Laptop) - Setup Kare**
+## 🚀 **Step 3: Friend (Laptop) - Setup Kare**
 
 ### 3.1 - WEB Folder Ko Copy Karo
 Example location:
@@ -65,12 +65,12 @@ D:\Projects\WEB\
 
 ### 3.2 - VS Code Open Karo
 1. VS Code open karo
-2. `File → Open Folder`
+2. `File ➜ Open Folder`
 3. WEB folder select karo
 
 ### 3.3 - Terminal Open Karo
 VS Code me:
-- `Terminal → New Terminal` (ya `Ctrl + ~`)
+- `Terminal ➜ New Terminal` (ya `Ctrl + ~`)
 - PowerShell terminal khulega
 
 ### 3.4 - Virtual Environment Banao
@@ -78,14 +78,14 @@ Terminal me type karo:
 ```powershell
 python -m venv .venv
 ```
-*Wait karo... 10-20 seconds lagenge*
+*Wait karo... 10-20 seconds lagenege*
 
 ### 3.5 - Virtual Environment Activate Karo
 ```powershell
 .venv\Scripts\activate
 ```
 
-**Success sign:** Terminal me `(.venv)` dikhai dega:
+**Success sign:** Terminal me `(.venv)` dikhain dega:
 ```
 (.venv) PS D:\Projects\WEB>
 ```
@@ -95,7 +95,7 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-*Wait karo... 2-3 minutes lagenge (ye sabse zyada time leta hai)*
+*Wait karo... 2-3 minutes lagenege (ye sabse zyadaa time leta hai)*
 
 **Packages install honge:**
 - fastapi
@@ -140,36 +140,42 @@ Ctrl + Shift + R
 
 ### Left Sidebar:
 ```
-┌────────────────────────────────┐
-│ 🗺️ Iowa Local Datasets         │
-│                                │
-│ 🌍 Land Use / Land Cover       │
-│ ☑ Iowa CDL 2023                │
-│ ☐ Iowa NLCD 2021               │
-│                                │
-│ 🌱 Vegetation Indices          │
-│ ☐ Iowa NDVI 2023               │
-│                                │
-│ 🌤️ Climate Data                │
-│ ☐ Iowa Rainfall 2023           │
-│ ☐ Iowa Max Temperature 2023    │
-│                                │
-│ 🏔️ Soil Data                   │
-│ ☐ Iowa Soil Moisture 2023      │
-│ ☐ Iowa ET 2023                 │
-│                                │
-│ [ℹ️ Dataset Information]       │
-└────────────────────────────────┘
+┌────────────────────────────────────┐
+│ 🗺️ Iowa Local Datasets            │
+├────────────────────────────────────┤
+│ 📍                                 │
+│ 🌾 Land Use / Land Cover           │
+├────────────────────────────────────┤
+│ 📍                                 │
+│ 🛰️ Iowa CDL 2023                  │
+│ 🛰️ Iowa NLCD 2021                 │
+├────────────────────────────────────┤
+│ 📍                                 │
+│ 🌱 Vegetation Indices              │
+│ 🛰️ Iowa NDVI 2023                 │
+├────────────────────────────────────┤
+│ 📍                                 │
+│ 🌦️ Climate Data                   │
+│ 🛰️ Iowa Rainfall 2023              │
+│ 🛰️ Iowa Max Temperature 2023       │
+├────────────────────────────────────┤
+│ 📍                                 │
+│ 🌍 Soil Data                       │
+│ 🛰️ Iowa Soil Moisture 2023         │
+│ 🛰️ Iowa ET 2023                    │
+├────────────────────────────────────┤
+│ [📊 Dataset Information]           │
+└────────────────────────────────────┘
 ```
 
 ### Map:
 - Iowa state boundary dikhega
 - CDL 2023 layer by default ON hoga
-- Click karoge toh AI insights dikhenge (right side panel)
+- Click kargo to get AI insights dikhenge (right side panel)
 
 ---
 
-## 🔧 **Agar Kuch Problem Ho**
+## 🛠️ **Agar Kuch Problem Ho**
 
 ### Problem 1: `python: command not found`
 **Solution:**
@@ -206,15 +212,17 @@ python main.py
 ### Problem 5: Dataset Panel nahi dikh raha
 **Solution:**
 1. Browser me hard refresh: `Ctrl + Shift + R`
-2. F12 press karo → Console check karo
-3. Error dikhe toh screenshot bhejo
+2. F12 press karo ➜ Console check karo
+3. Error dikhei to screenshot bhejo
 
 ### Problem 6: AI insights not working
 **Solution:**
 Check `.env` file me API key hai ya nahi:
 ```
-GEMINI_API_KEY=YOUR_API_KEY_HERE
+GEMINI_API_KEY=your_google_gemini_api_key_here
 ```
+
+**Note:** Get your API key from [Google AI Studio](https://aistudio.google.com/app/apikey). Do NOT commit real keys to GitHub.
 
 ### Problem 7: GDAL installation error
 **Solution:**
@@ -228,10 +236,10 @@ pip install --find-links=https://github.com/cgohlke/geospatial-wheels/releases/l
 
 ---
 
-## 🎯 **Testing Kaise Karein**
+## 🧪 **Testing Kaisey Karein**
 
 ### Test 1: Server Running?
-Terminal me ye dikhna chahiye:
+Terminal me yeh dikhna chahiye:
 ```
 INFO:     Uvicorn running on http://0.0.0.0:8000
 ```
@@ -251,7 +259,7 @@ Left sidebar me "🗺️ Iowa Local Datasets" section dikhna chahiye.
 3. Right side me AI panel khulega with recommendations
 
 ### Test 5: Console Check
-F12 press karo → Console tab:
+F12 press karo ➜ Console tab:
 ```
 ✅ Iowa boundary loaded
 ✅ Iowa layers sidebar panel created
@@ -259,7 +267,7 @@ F12 press karo → Console tab:
 
 ---
 
-## 📝 **Quick Commands Reference**
+## 💡 **Quick Commands Reference**
 
 ### Start Server:
 ```powershell
@@ -275,7 +283,8 @@ Ctrl + C
 
 ### Update Packages (agar kabhi zaroorat ho):
 ```powershell
-pip install --upgrade -r requirements.txt
+python -m pip install --upgrade pip
+pip install -r requirements.txt
 ```
 
 ### Deactivate Virtual Environment:
@@ -285,7 +294,17 @@ deactivate
 
 ---
 
-## 🎉 **Success Checklist**
+## 🎯 **Pro Tips**
+
+1. **Virtual environment hamesha activate karo** before running server
+2. **Hard refresh** (Ctrl+Shift+R) karo agar UI update nahi dikhei
+3. **Console** (F12) check karo agar kuch kaam na kare
+4. **Server terminal** ko band mat karo jab app use kar rahe ho
+5. **.env file** ko kabhi delete mat karna (API key hain usmein)
+
+---
+
+## ✅ **Success Checklist**
 
 ✅ Virtual environment ban gaya  
 ✅ Requirements install ho gaye  
@@ -293,71 +312,27 @@ deactivate
 ✅ Browser me map dikh raha hai  
 ✅ Dataset panel left side me hai  
 ✅ Checkboxes kaam kar rahe hain  
-✅ Map pe click karne se AI insights aate hain  
+✅ Map pe click karne se AI panel aata hain  
 ✅ Export button kaam kar raha hai  
 
-**Agar sab ✅ hai, toh setup complete! 🎊**
+**Agar sab ✅ hain, toh setup complete hain! 🎉**
 
 ---
 
-## 💡 **Pro Tips**
+## 🎓 **Pro Tips**
 
 1. **Virtual environment hamesha activate karo** before running server
-2. **Hard refresh** (Ctrl+Shift+R) karo agar UI update nahi dikhe
+2. **Hard refresh** (Ctrl+Shift+R) karo agar UI update nahi dikhei
 3. **Console** (F12) check karo agar kuch kaam na kare
 4. **Server terminal** ko band mat karo jab tak app use kar rahe ho
-5. **.env file** ko kabhi delete mat karna (API key hai usme)
+5. **.env file** ko kabhi delete mat karna (API key hain usmein)
 
 ---
 
-## 📞 **Still Problems?**
+## 🎯 **Ready to Go!**
 
-Agar kuch bhi problem ho, in cheezen check karo:
+Bas itna hi! Agar yeh sab steps follow karo, toh application 100% chaleogi.
 
-1. ✅ Python installed hai? (`python --version`)
-2. ✅ WEB folder complete copy hua?
-3. ✅ `.env` file hai folder me?
-4. ✅ `DATA/` folder empty toh nahi?
-5. ✅ Virtual environment activated hai?
-6. ✅ Server running hai? (terminal me check karo)
-7. ✅ Browser URL sahi hai? (`localhost:8000`)
-8. ✅ Hard refresh kiya? (Ctrl+Shift+R)
-
-Screenshot bhejo:
-- Terminal window (where python main.py is running)
-- Browser console (F12 → Console tab)
-- Left sidebar (kya dikh raha hai)
-
----
-
-## 🔄 **Daily Usage (Roz Kaise Chalana Hai)**
-
-### Morning (Jab kaam shuru karo):
-```powershell
-# 1. VS Code open karo
-# 2. Terminal open karo
-# 3. Commands:
-cd D:\Projects\WEB
-.venv\Scripts\activate
-python main.py
-
-# 4. Browser: http://localhost:8000/static/index.html
-```
-
-### Evening (Jab kaam khatam):
-```
-# Server stop karo:
-Ctrl + C
-
-# VS Code close kar do
-```
-
----
-
-## 🚀 **Ready to Go!**
-
-Bas itna hi! Agar ye sab steps follow kare, toh application 100% chalegi.
-
-**No API key setup needed - everything pre-configured! 🎉**
+**No real API key setup needed - everything pre-configured hai! 🎉**
 
 Questions? Problems? Screenshots bhejo!
