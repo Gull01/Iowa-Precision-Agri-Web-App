@@ -1,0 +1,411 @@
+/**
+ * Iowa Local Data Layers Styles
+ */
+
+/* Main layer control container */
+.iowa-layer-control {
+    background: white;
+    padding: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    max-width: 320px;
+    max-height: 600px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Control header */
+.iowa-control-header {
+    background: linear-gradient(135deg, #FFC107 0%, #FF9800 100%);
+    color: white;
+    padding: 16px;
+    border-bottom: 2px solid #FF9800;
+}
+
+.iowa-control-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.iowa-control-subtitle {
+    font-size: 11px;
+    opacity: 0.9;
+    margin-top: 4px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Control content area */
+.iowa-control-content {
+    overflow-y: auto;
+    max-height: 420px;
+    padding: 12px;
+}
+
+.iowa-control-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.iowa-control-content::-webkit-scrollbar-track {
+    background: #f0f0f0;
+}
+
+.iowa-control-content::-webkit-scrollbar-thumb {
+    background: #FFC107;
+    border-radius: 3px;
+}
+
+.iowa-control-content::-webkit-scrollbar-thumb:hover {
+    background: #FF9800;
+}
+
+/* Layer groups */
+.iowa-layer-group {
+    margin-bottom: 16px;
+}
+
+.iowa-group-header {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    padding: 8px 0 6px 0;
+    border-bottom: 2px solid #FFC107;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Individual layer items */
+.iowa-layer-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 6px;
+    margin-bottom: 4px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.iowa-layer-item:hover {
+    background: #FFF8E1;
+}
+
+.iowa-layer-item label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    flex: 1;
+    font-size: 13px;
+    color: #444;
+}
+
+.iowa-layer-toggle {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    accent-color: #FFC107;
+}
+
+.iowa-info-btn {
+    background: #FFC107;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    padding: 0;
+}
+
+.iowa-info-btn:hover {
+    background: #FF9800;
+    transform: scale(1.1);
+}
+
+/* Control footer */
+.iowa-control-footer {
+    padding: 12px;
+    border-top: 1px solid #e0e0e0;
+    background: #f9f9f9;
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+}
+
+.iowa-zoom-btn,
+.iowa-stats-btn {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.iowa-zoom-btn {
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    color: white;
+    box-shadow: 0 2px 6px rgba(76, 175, 80, 0.3);
+}
+
+.iowa-zoom-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.4);
+}
+
+.iowa-stats-btn {
+    background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+    color: white;
+    box-shadow: 0 2px 6px rgba(33, 150, 243, 0.3);
+}
+
+.iowa-stats-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(33, 150, 243, 0.4);
+}
+
+/* Modal styles */
+.iowa-info-modal {
+    display: block;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(4px);
+}
+
+.iowa-modal-content {
+    background: white;
+    margin: 5% auto;
+    padding: 0;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 12px;
+    max-height: 80vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.iowa-modal-wide {
+    max-width: 900px;
+}
+
+.iowa-modal-header {
+    background: linear-gradient(135deg, #FFC107 0%, #FF9800 100%);
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.iowa-modal-header h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.iowa-modal-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.iowa-modal-close:hover {
+    background: rgba(255,255,255,0.2);
+    transform: rotate(90deg);
+}
+
+.iowa-modal-body {
+    padding: 24px;
+    overflow-y: auto;
+}
+
+/* Statistics boxes */
+.iowa-stats-box,
+.iowa-bounds-box {
+    background: #f5f5f5;
+    padding: 16px;
+    border-radius: 8px;
+    margin-top: 16px;
+    border-left: 4px solid #FFC107;
+}
+
+.iowa-stats-box h3,
+.iowa-bounds-box h3 {
+    margin: 0 0 12px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.iowa-stats-box ul,
+.iowa-bounds-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.iowa-stats-box li,
+.iowa-bounds-box li {
+    padding: 6px 0;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 14px;
+}
+
+.iowa-stats-box li:last-child,
+.iowa-bounds-box li:last-child {
+    border-bottom: none;
+}
+
+/* Statistics grid */
+.iowa-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+.iowa-stat-card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 18px;
+    border-radius: 10px;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.iowa-stat-card h3 {
+    margin: 0 0 14px 0;
+    font-size: 15px;
+    color: #333;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #FFC107;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    font-size: 13px;
+    color: #555;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.stat-row:last-child {
+    border-bottom: none;
+}
+
+.stat-row strong {
+    color: #FF9800;
+}
+
+/* Data popup */
+.iowa-data-popup {
+    min-width: 220px;
+}
+
+.iowa-data-popup h4 {
+    margin: 0 0 8px 0;
+    color: #FF9800;
+    font-size: 16px;
+}
+
+.iowa-data-popup hr {
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    margin: 10px 0;
+}
+
+.iowa-value-item {
+    padding: 6px 0;
+    font-size: 13px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.iowa-value-item:last-child {
+    border-bottom: none;
+}
+
+.iowa-value-item strong {
+    color: #333;
+}
+
+/* Loading state */
+.loading {
+    text-align: center;
+    padding: 24px;
+    color: #999;
+    font-size: 14px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .iowa-layer-control {
+        max-width: 280px;
+    }
+    
+    .iowa-modal-content {
+        width: 95%;
+        margin: 10px auto;
+    }
+    
+    .iowa-stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.iowa-layer-control {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Leaflet popup customization for Iowa data */
+.leaflet-popup-content {
+    margin: 0;
+}
+
+.leaflet-popup-content-wrapper {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}

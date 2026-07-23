@@ -1,0 +1,338 @@
+/* AI Insights Panel Styles */
+
+.ai-insights-panel {
+    position: fixed;
+    right: 20px;
+    top: 80px;
+    width: 450px;
+    max-height: calc(100vh - 100px);
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.ai-insights-panel.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(20px);
+}
+
+.ai-panel-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 16px 20px;
+    border-radius: 12px 12px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ai-panel-header h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.ai-panel-header .close-btn {
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.ai-panel-header .close-btn:hover {
+    background: rgba(255,255,255,0.3);
+    transform: scale(1.1);
+}
+
+.ai-panel-content {
+    padding: 20px;
+    overflow-y: auto;
+    max-height: calc(100vh - 180px);
+}
+
+.ai-panel-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.ai-panel-content::-webkit-scrollbar-track {
+    background: #f0f2f5;
+}
+
+.ai-panel-content::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+.location-info {
+    background: #f8f9fa;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.info-text {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.welcome-message {
+    text-align: center;
+    padding: 20px;
+}
+
+.welcome-message h4 {
+    color: #333;
+    margin-bottom: 16px;
+    font-size: 18px;
+}
+
+.welcome-message ul {
+    text-align: left;
+    margin: 20px 0;
+    padding-left: 24px;
+}
+
+.welcome-message li {
+    margin: 8px 0;
+    color: #666;
+    line-height: 1.6;
+}
+
+.action-text {
+    color: #667eea;
+    font-weight: 600;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.loading-insights {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.loading-insights p {
+    color: #666;
+    margin: 8px 0;
+}
+
+.loading-insights .coords {
+    color: #333;
+    font-weight: 600;
+}
+
+.loading-insights .status {
+    color: #667eea;
+    font-size: 13px;
+}
+
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #667eea;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.insights-result {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.location-header {
+    border-bottom: 2px solid #e1e8ed;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+}
+
+.location-header h4 {
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.location-header .coords {
+    color: #666;
+    font-size: 13px;
+}
+
+.current-data {
+    background: #f8f9fa;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.current-data h5 {
+    color: #333;
+    font-size: 14px;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.data-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.data-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    background: white;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+.data-label {
+    color: #666;
+    font-weight: 500;
+}
+
+.data-value {
+    color: #333;
+    font-weight: 600;
+}
+
+.ai-analysis {
+    background: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #e1e8ed;
+    margin-bottom: 20px;
+}
+
+.ai-analysis h5 {
+    color: #667eea;
+    font-size: 14px;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.analysis-content {
+    color: #333;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.analysis-content p {
+    margin-bottom: 12px;
+}
+
+.analysis-content strong {
+    color: #667eea;
+    font-weight: 600;
+}
+
+.analysis-content h6.insight-section {
+    color: #667eea;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 16px 0 8px 0;
+    padding: 8px 12px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%);
+    border-left: 3px solid #667eea;
+    border-radius: 4px;
+}
+
+.analysis-content h6.insight-section:first-child {
+    margin-top: 0;
+}
+
+.analysis-content .section-content {
+    margin-bottom: 8px;
+    padding-left: 4px;
+}
+
+.insight-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-primary, .btn-secondary {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    background: #f0f2f5;
+    color: #333;
+}
+
+.btn-secondary:hover {
+    background: #e1e8ed;
+}
+
+.error-message {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.error-message h4 {
+    color: #e74c3c;
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+.error-message p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.ai-insights-control a {
+    background: white;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.ai-insights-control a:hover {
+    background: #f0f2f5;
+}

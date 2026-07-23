@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quick Test - Iowa Datasets Panel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .test-box {
+            border: 2px solid #ddd;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+        .pass { border-color: #4CAF50; background: #f0f9f0; }
+        .fail { border-color: #f44336; background: #fff0f0; }
+        button {
+            background: #2196F3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            margin: 5px;
+        }
+        button:hover { background: #1976D2; }
+        pre {
+            background: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .status { font-weight: bold; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h1>🔍 Iowa Datasets Panel - Debug Test</h1>
+    <p><strong>Server must be running on port 8000!</strong></p>
+    
+    <div class="test-box" id="serverTest">
+        <h3>Test 1: Server Running?</h3>
+        <button onclick="testServer()">Test Server</button>
+        <div id="serverResult"></div>
+    </div>
+    
+    <div class="test-box" id="apiTest">
+        <h3>Test 2: API Endpoints Working?</h3>
+        <button onclick="testAPI()">Test API</button>
+        <div id="apiResult"></div>
+    </div>
+    
+    <div class="test-box" id="filesTest">
+        <h3>Test 3: Files Loading?</h3>
+        <button onclick="testFiles()">Test Files</button>
+        <div id="filesResult"></div>
+    </div>
+    
+    <div class="test-box" id="jsTest">
+        <h3>Test 4: JavaScript Loading?</h3>
+        <button onclick="testJS()">Test JavaScript</button>
+        <div id="jsResult"></div>
+    </div>
+    
+    <div class="test-box" id="instructionsBox">
+        <h3>📋 If Tests Fail:</h3>
+        <ol>
+            <li><strong>Test 1 fails:</strong> Server not running. Run: <code>python main.py</code></li>
+            <li><strong>Test 2 fails:</strong> Backend issue. Check terminal for errors.</li>
+            <li><strong>Test 3 fails:</strong> Hard refresh browser: <code>Ctrl + Shift + R</code></li>
+            <li><strong>Test 4 fails:</strong> JavaScript files corrupted. Re-copy WEB folder.</li>
+        </ol>
+    </div>
+    
+    <script>
+        async function testServer() {
+            const result = document.getElementById('serverResult');
+            result.innerHTML = '<div class="status">Testing...</div>';
+            
+            try {
+                const response = await fetch('http://localhost:8000/');
+                if (response.ok) {
+                    const data = await response.json();
+                    result.innerHTML = `
+                        <div class="status" style="color: green;">✅ PASS - Server is running!</div>
+                        <pre>${JSON.stringify(data, null, 2)}</pre>
+                    `;
+                    document.getElementById('serverTest').className = 'test-box pass';
+                } else {
+                    throw new Error('Server returned error: ' + response.status);
+                }
+            } catch (error) {
+                result.innerHTML = `
+                    <div class="status" style="color: red;">❌ FAIL - Server not responding</div>
+                    <p>Error: ${error.message}</p>
+                    <p><strong>Solution:</strong> Run <code>python main.py</code> in terminal</p>
+                `;
+                document.getElementById('serverTest').className = 'test-box fail';
+            }
+        }
+        
+        async function testAPI() {
+            const result = document.getElementById('apiResult');
+            result.innerHTML = '<div class="status">Testing...</div>';
+            
+            try {
+                const response = await fetch('http://localhost:8000/api/local-data/datasets');
+                if (response.ok) {
+                    const data = await response.json();
+                    const count = data.datasets ? data.datasets.length : 0;
+                    result.innerHTML = `
+                        <div class="status" style="color: green;">✅ PASS - API working!</div>
+                        <p>Found ${count} datasets</p>
+                        <pre>${JSON.stringify(data, null, 2)}</pre>
+                    `;
+                    document.getElementById('apiTest').className = 'test-box pass';
+                } else {
+                    throw new Error('API returned error: ' + response.status);
+                }
+            } catch (error) {
+                result.innerHTML = `
+                    <div class="status" style="color: red;">❌ FAIL - API not responding</div>
+                    <p>Error: ${error.message}</p>
+                    <p><strong>Check:</strong> DATA folder exists with .tif files?</p>
+                `;
+                document.getElementById('apiTest').className = 'test-box fail';
+            }
+        }
+        
+        async function testFiles() {
+            const result = document.getElementById('filesResult');
+            result.innerHTML = '<div class="status">Testing...</div>';
+            
+            const files = [
+                'iowa-local-layers.js',
+                'iowa-local-layers.css',
+                'ai-insights.js',
+                'ai-insights.css',
+                'app.js'
+            ];
+            
+            let allGood = true;
+            let html = '<div class="status">Checking files...</div><ul>';
+            
+            for (const file of files) {
+                try {
+                    const response = await fetch(`http://localhost:8000/static/${file}`, { method: 'HEAD' });
+                    if (response.ok) {
+                        html += `<li style="color: green;">✅ ${file} - OK</li>`;
+                    } else {
+                        html += `<li style="color: red;">❌ ${file} - Missing (${response.status})</li>`;
+                        allGood = false;
+                    }
+                } catch (error) {
+                    html += `<li style="color: red;">❌ ${file} - Error</li>`;
+                    allGood = false;
+                }
+            }
+            
+            html += '</ul>';
+            
+            if (allGood) {
+                result.innerHTML = `
+                    <div class="status" style="color: green;">✅ PASS - All files present!</div>
+                    ${html}
+                `;
+                document.getElementById('filesTest').className = 'test-box pass';
+            } else {
+                result.innerHTML = `
+                    <div class="status" style="color: red;">❌ FAIL - Some files missing</div>
+                    ${html}
+                    <p><strong>Solution:</strong> Re-copy the static/ folder</p>
+                `;
+                document.getElementById('filesTest').className = 'test-box fail';
+            }
+        }
+        
+        async function testJS() {
+            const result = document.getElementById('jsResult');
+            result.innerHTML = '<div class="status">Testing...</div>';
+            
+            // Load the JavaScript file
+            const script = document.createElement('script');
+            script.src = 'http://localhost:8000/static/iowa-local-layers.js';
+            
+            script.onload = () => {
+                const checks = {
+                    'initializeIowaLocalLayers': typeof window.initializeIowaLocalLayers === 'function',
+                    'iowaLocalLayers': typeof window.iowaLocalLayers === 'object'
+                };
+                
+                const allGood = Object.values(checks).every(v => v);
+                
+                let html = '<ul>';
+                for (const [name, exists] of Object.entries(checks)) {
+                    html += exists 
+                        ? `<li style="color: green;">✅ ${name} - Found</li>`
+                        : `<li style="color: red;">❌ ${name} - Missing</li>`;
+                }
+                html += '</ul>';
+                
+                if (allGood) {
+                    result.innerHTML = `
+                        <div class="status" style="color: green;">✅ PASS - JavaScript loaded correctly!</div>
+                        ${html}
+                    `;
+                    document.getElementById('jsTest').className = 'test-box pass';
+                } else {
+                    result.innerHTML = `
+                        <div class="status" style="color: red;">❌ FAIL - JavaScript not loaded properly</div>
+                        ${html}
+                        <p><strong>Solution:</strong> Check browser console (F12) for errors</p>
+                    `;
+                    document.getElementById('jsTest').className = 'test-box fail';
+                }
+            };
+            
+            script.onerror = () => {
+                result.innerHTML = `
+                    <div class="status" style="color: red;">❌ FAIL - Could not load JavaScript</div>
+                    <p><strong>Solution:</strong> Re-copy iowa-local-layers.js file</p>
+                `;
+                document.getElementById('jsTest').className = 'test-box fail';
+            };
+            
+            document.body.appendChild(script);
+        }
+    </script>
+</body>
+</html>
