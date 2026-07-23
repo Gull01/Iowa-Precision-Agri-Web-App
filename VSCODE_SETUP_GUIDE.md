@@ -1,10 +1,10 @@
-# 👋 VS Code Setup Guide (Urdu/English)
+# VS Code Setup Guide
 
-## 🎯 Complete Step-by-Step Guide for Your Friend
+## Complete Step-by-Step Guide
 
 ---
 
-## 🚀 **Step 1: Aap (Office PC) - Folder Ready Karo**
+## Step 1: Prepare Your Project Folder
 
 ### Files to Share:
 ```
@@ -17,7 +17,7 @@ WEB/
 ├─ models.py
 ├─ schemas.py
 ├─ requirements.txt  ➜ Important!
-├─ .env              ➜ Important! (API key hain ismein)
+├─ .env              ➜ Important! (Contains API keys)
 ├─ DATA/             ➜ All 7 GeoTIFF files
 └─ static/
     ├─ index.html
@@ -29,24 +29,24 @@ WEB/
 ```
 
 ### Double-Check These Files:
-✅ `.env` file exists (API key hain ismein)  
+✅ `.env` file exists (contains API keys)  
 ✅ `requirements.txt` exists  
-✅ `DATA/` folder complete hain (7 GeoTIFF files)  
-✅ `static/` folder complete hain (all HTML/JS/CSS)
+✅ `DATA/` folder is complete (7 GeoTIFF files)  
+✅ `static/` folder is complete (all HTML/JS/CSS files)
 
 ---
 
-## 🚀 **Step 2: Share Karo**
+## Step 2: Share Your Project
 
 **Option A: USB Drive**
 - Copy entire `WEB` folder to USB
-- Friend ko de do
+- Give to friend
 
 **Option B: Google Drive / OneDrive**
 - Zip the `WEB` folder
 - Upload and share link
 
-**Option C: GitHub (if you use it)**
+**Option C: GitHub**
 ```bash
 git add .
 git commit -m "Complete Iowa AI app"
@@ -55,65 +55,65 @@ git push
 
 ---
 
-## 🚀 **Step 3: Friend (Laptop) - Setup Kare**
+## Step 3: Setup on Friend's Laptop
 
-### 3.1 - WEB Folder Ko Copy Karo
+### 3.1 - Copy WEB Folder
 Example location:
 ```
 D:\Projects\WEB\
 ```
 
-### 3.2 - VS Code Open Karo
-1. VS Code open karo
+### 3.2 - Open VS Code
+1. Open VS Code
 2. `File ➜ Open Folder`
-3. WEB folder select karo
+3. Select WEB folder
 
-### 3.3 - Terminal Open Karo
-VS Code me:
-- `Terminal ➜ New Terminal` (ya `Ctrl + ~`)
-- PowerShell terminal khulega
+### 3.3 - Open Terminal
+In VS Code:
+- `Terminal ➜ New Terminal` (or `Ctrl + ~`)
+- PowerShell terminal will open
 
-### 3.4 - Virtual Environment Banao
-Terminal me type karo:
+### 3.4 - Create Virtual Environment
+Type in terminal:
 ```powershell
 python -m venv .venv
 ```
-*Wait karo... 10-20 seconds lagenege*
+*Wait 10-20 seconds*
 
-### 3.5 - Virtual Environment Activate Karo
+### 3.5 - Activate Virtual Environment
 ```powershell
 .venv\Scripts\activate
 ```
 
-**Success sign:** Terminal me `(.venv)` dikhain dega:
+**Success sign:** You'll see `(.venv)` in terminal:
 ```
 (.venv) PS D:\Projects\WEB>
 ```
 
-### 3.6 - Requirements Install Karo
+### 3.6 - Install Requirements
 ```powershell
 pip install -r requirements.txt
 ```
 
-*Wait karo... 2-3 minutes lagenege (ye sabse zyadaa time leta hai)*
+*Wait 2-3 minutes*
 
-**Packages install honge:**
+**Packages that will install:**
 - fastapi
 - uvicorn
 - sqlalchemy
 - google-generativeai
-- gdal (ye thoda slow hai)
+- gdal (this is slower)
 - rasterio
 - numpy
 - shapely
 - etc...
 
-### 3.7 - Server Start Karo
+### 3.7 - Start Server
 ```powershell
 python main.py
 ```
 
-**Success messages dikhenge:**
+**Success messages you'll see:**
 ```
 INFO:     Started server process
 INFO:     Waiting for application startup.
@@ -121,22 +121,22 @@ INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8000
 ```
 
-### 3.8 - Browser Open Karo
-Browser me jao:
+### 3.8 - Open Browser
+Navigate to:
 ```
 http://localhost:8000/static/index.html
 ```
 
-### 3.9 - Hard Refresh Karo (Important!)
-Browser me:
+### 3.9 - Hard Refresh (Important!)
+In browser:
 ```
 Ctrl + Shift + R
 ```
-(Ya `Ctrl + F5`)
+(Or `Ctrl + F5`)
 
 ---
 
-## ✅ **Kya Dikhega (What to Expect)**
+## What You'll See
 
 ### Left Sidebar:
 ```
@@ -168,14 +168,14 @@ Ctrl + Shift + R
 └────────────────────────────────────┘
 ```
 
-### Map:
-- Iowa state boundary dikhega
-- CDL 2023 layer by default ON hoga
-- Click kargo to get AI insights dikhenge (right side panel)
+### Map Features:
+- Iowa state boundary will be displayed
+- CDL 2023 layer will be ON by default
+- Click on map to get AI insights (right side panel)
 
 ---
 
-## 🛠️ **Agar Kuch Problem Ho**
+## Troubleshooting
 
 ### Problem 1: `python: command not found`
 **Solution:**
@@ -191,7 +191,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 .venv\Scripts\activate
 ```
 
-### Problem 3: `pip install` me error
+### Problem 3: `pip install` errors
 **Solution:**
 ```powershell
 python -m pip install --upgrade pip
@@ -200,66 +200,68 @@ pip install -r requirements.txt
 
 ### Problem 4: Port 8000 already in use
 **Solution:**
-Terminal me previous server ko band karo:
+Stop previous server:
 ```
 Ctrl + C
 ```
-Phir dobara:
+Then restart:
 ```powershell
 python main.py
 ```
 
-### Problem 5: Dataset Panel nahi dikh raha
+### Problem 5: Dataset Panel not showing
 **Solution:**
-1. Browser me hard refresh: `Ctrl + Shift + R`
-2. F12 press karo ➜ Console check karo
-3. Error dikhei to screenshot bhejo
+1. Hard refresh browser: `Ctrl + Shift + R`
+2. Open Developer Console: `F12`
+3. Check Console tab for errors
+4. Send screenshot if error occurs
 
 ### Problem 6: AI insights not working
 **Solution:**
-Check `.env` file me API key hai ya nahi:
+Check `.env` file has API key:
 ```
 GEMINI_API_KEY=your_google_gemini_api_key_here
 ```
 
-**Note:** Get your API key from [Google AI Studio](https://aistudio.google.com/app/apikey). Do NOT commit real keys to GitHub.
+**Note:** Get your API key from [Google AI Studio](https://aistudio.google.com/app/apikey). Never commit real keys to GitHub.
 
 ### Problem 7: GDAL installation error
 **Solution:**
 ```powershell
 pip install gdal==3.4.3
 ```
-Agar phir bhi error:
+
+If still fails:
 ```powershell
 pip install --find-links=https://github.com/cgohlke/geospatial-wheels/releases/latest GDAL
 ```
 
 ---
 
-## 🧪 **Testing Kaisey Karein**
+## Testing Your Setup
 
-### Test 1: Server Running?
-Terminal me yeh dikhna chahiye:
+### Test 1: Is Server Running?
+Terminal should show:
 ```
 INFO:     Uvicorn running on http://0.0.0.0:8000
 ```
 
-### Test 2: Homepage Load?
-Browser me:
+### Test 2: Does Homepage Load?
+Navigate to:
 ```
 http://localhost:8000/static/index.html
 ```
 
-### Test 3: Datasets Panel Visible?
-Left sidebar me "🗺️ Iowa Local Datasets" section dikhna chahiye.
+### Test 3: Is Dataset Panel Visible?
+Check left sidebar for "🗺️ Iowa Local Datasets" section.
 
-### Test 4: AI Working?
-1. Map pe kahi bhi click karo (Iowa ke andar)
+### Test 4: Does AI Work?
+1. Click anywhere on map (inside Iowa)
 2. Wait 5-10 seconds
-3. Right side me AI panel khulega with recommendations
+3. Right side panel should show AI recommendations
 
-### Test 5: Console Check
-F12 press karo ➜ Console tab:
+### Test 5: Check Console
+Press `F12` ➜ Console tab should show:
 ```
 ✅ Iowa boundary loaded
 ✅ Iowa layers sidebar panel created
@@ -267,7 +269,7 @@ F12 press karo ➜ Console tab:
 
 ---
 
-## 💡 **Quick Commands Reference**
+## Quick Commands Reference
 
 ### Start Server:
 ```powershell
@@ -281,7 +283,7 @@ python main.py
 Ctrl + C
 ```
 
-### Update Packages (agar kabhi zaroorat ho):
+### Update Packages:
 ```powershell
 python -m pip install --upgrade pip
 pip install -r requirements.txt
@@ -294,45 +296,38 @@ deactivate
 
 ---
 
-## 🎯 **Pro Tips**
+## Pro Tips
 
-1. **Virtual environment hamesha activate karo** before running server
-2. **Hard refresh** (Ctrl+Shift+R) karo agar UI update nahi dikhei
-3. **Console** (F12) check karo agar kuch kaam na kare
-4. **Server terminal** ko band mat karo jab app use kar rahe ho
-5. **.env file** ko kabhi delete mat karna (API key hain usmein)
-
----
-
-## ✅ **Success Checklist**
-
-✅ Virtual environment ban gaya  
-✅ Requirements install ho gaye  
-✅ Server chal raha hai (port 8000)  
-✅ Browser me map dikh raha hai  
-✅ Dataset panel left side me hai  
-✅ Checkboxes kaam kar rahe hain  
-✅ Map pe click karne se AI panel aata hain  
-✅ Export button kaam kar raha hai  
-
-**Agar sab ✅ hain, toh setup complete hain! 🎉**
+1. **Always activate virtual environment** before running server
+2. **Hard refresh** (Ctrl+Shift+R) if UI doesn't update
+3. **Check Console** (F12) if something doesn't work
+4. **Keep server terminal running** while using app
+5. **Never delete .env file** (it contains API keys)
 
 ---
 
-## 🎓 **Pro Tips**
+## Success Checklist
 
-1. **Virtual environment hamesha activate karo** before running server
-2. **Hard refresh** (Ctrl+Shift+R) karo agar UI update nahi dikhei
-3. **Console** (F12) check karo agar kuch kaam na kare
-4. **Server terminal** ko band mat karo jab tak app use kar rahe ho
-5. **.env file** ko kabhi delete mat karna (API key hain usmein)
+✅ Virtual environment created  
+✅ Requirements installed  
+✅ Server running (port 8000)  
+✅ Map visible in browser  
+✅ Dataset panel showing on left  
+✅ Layer checkboxes working  
+✅ AI insights appear on map click  
+✅ Export button functional  
+
+**If all ✅, you're ready to go! 🎉**
 
 ---
 
-## 🎯 **Ready to Go!**
+## Additional Resources
 
-Bas itna hi! Agar yeh sab steps follow karo, toh application 100% chaleogi.
+- **Python Installation**: [python.org](https://www.python.org)
+- **VS Code Download**: [code.visualstudio.com](https://code.visualstudio.com)
+- **Google AI Studio**: [aistudio.google.com](https://aistudio.google.com/app/apikey)
+- **FastAPI Docs**: [fastapi.tiangolo.com](https://fastapi.tiangolo.com)
 
-**No real API key setup needed - everything pre-configured hai! 🎉**
+---
 
-Questions? Problems? Screenshots bhejo!
+**Questions? Problems? Errors? Share screenshots or error messages!**
